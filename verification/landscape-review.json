@@ -1,0 +1,16 @@
+{
+  "result": {
+    "summary": "照片构图完整，层次自然，湖面与远山形成稳定视觉关系，主体清晰，背景有透视纵深，整体氛围宁静，符合拍摄意图。",
+    "strengths": [
+      "湖面与远山形成清晰的前景-中景-背景层次，视觉引导自然",
+      "天空云层与雪山形成对比色块，增加画面丰富度",
+      "近景岩石与水面波纹细节丰富，增强真实感"
+    ],
+    "issues": [],
+    "uncertainties": [],
+    "reference": null,
+    "comparison": null
+  },
+  "duration_seconds": 6.65,
+  "model": "qwen3-vl:4b-instruct"
+}

@@ -1,0 +1,16 @@
+{
+  "result": {
+    "summary": "照片从俯视角度拍摄冰咖啡与咖啡豆包装，前景有绿植遮挡，背景为木质桌面，整体氛围自然。主体清晰，构图有层次，光线柔和。",
+    "strengths": [
+      "主体咖啡杯与包装袋在画面中位置明确，有视觉引导作用",
+      "木质桌面纹理清晰，能体现场景质感",
+      "前景绿植与背景形成虚实对比，增强画面纵深感"
+    ],
+    "issues": [],
+    "uncertainties": [],
+    "reference": null,
+    "comparison": null
+  },
+  "duration_seconds": 6.62,
+  "model": "qwen3-vl:4b-instruct"
+}
