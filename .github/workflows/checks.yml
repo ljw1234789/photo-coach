@@ -1,0 +1,32 @@
+name: Checks
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: assistant/requirements.txt
+      - run: pnpm install --frozen-lockfile
+      - run: python -m pip install -r assistant/requirements.txt
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm check
+      - run: pnpm test:db
+      - run: python -m unittest discover -s tests -p 'test_*.py'
+      - run: python scripts/package_assistant.py --check
+      - run: pnpm test:ui
