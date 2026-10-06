@@ -1,0 +1,230 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "summary",
+    "strengths",
+    "issues",
+    "uncertainties",
+    "reference",
+    "comparison"
+  ],
+  "properties": {
+    "summary": {
+      "type": "string",
+      "maxLength": 600
+    },
+    "strengths": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "maxLength": 500
+      },
+      "minItems": 1
+    },
+    "issues": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "title",
+          "tag",
+          "kind",
+          "confidence",
+          "where",
+          "why",
+          "next_shot",
+          "salvage",
+          "parameter_advice",
+          "bbox",
+          "exercise"
+        ],
+        "properties": {
+          "title": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "tag": {
+            "enum": [
+              "主体",
+              "背景",
+              "构图",
+              "光线",
+              "清晰度",
+              "色彩",
+              "人物状态",
+              "表达"
+            ]
+          },
+          "kind": {
+            "enum": [
+              "technical",
+              "creative"
+            ]
+          },
+          "confidence": {
+            "enum": [
+              "high",
+              "medium",
+              "low"
+            ]
+          },
+          "where": {
+            "type": "string",
+            "maxLength": 600
+          },
+          "why": {
+            "type": "string",
+            "maxLength": 600
+          },
+          "next_shot": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "salvage": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "parameter_advice": {
+            "type": "string",
+            "maxLength": 1000
+          },
+          "bbox": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": {
+                  "type": "number",
+                  "minimum": 0,
+                  "maximum": 1
+                }
+              }
+            ]
+          },
+          "exercise": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "title",
+              "steps",
+              "success_criteria"
+            ],
+            "properties": {
+              "title": {
+                "type": "string",
+                "maxLength": 200
+              },
+              "steps": {
+                "type": "array",
+                "maxItems": 5,
+                "items": {
+                  "type": "string",
+                  "maxLength": 500
+                },
+                "minItems": 3
+              },
+              "success_criteria": {
+                "type": "string",
+                "maxLength": 800
+              }
+            }
+          }
+        }
+      }
+    },
+    "uncertainties": {
+      "type": "array",
+      "maxItems": 5,
+      "items": {
+        "type": "string",
+        "maxLength": 600
+      }
+    },
+    "reference": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "observations",
+            "try_next",
+            "differences"
+          ],
+          "properties": {
+            "observations": {
+              "type": "array",
+              "maxItems": 4,
+              "items": {
+                "type": "string",
+                "maxLength": 600
+              },
+              "minItems": 1
+            },
+            "try_next": {
+              "type": "string",
+              "maxLength": 1000
+            },
+            "differences": {
+              "type": "string",
+              "maxLength": 1000
+            }
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "improved",
+            "unchanged",
+            "next_step",
+            "limitations"
+          ],
+          "properties": {
+            "improved": {
+              "type": "array",
+              "maxItems": 3,
+              "items": {
+                "type": "string",
+                "maxLength": 600
+              }
+            },
+            "unchanged": {
+              "type": "array",
+              "maxItems": 3,
+              "items": {
+                "type": "string",
+                "maxLength": 600
+              }
+            },
+            "next_step": {
+              "type": "string",
+              "maxLength": 1000
+            },
+            "limitations": {
+              "type": "string",
+              "maxLength": 800
+            }
+          }
+        }
+      ]
+    }
+  }
+}
