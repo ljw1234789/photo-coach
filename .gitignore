@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+.venv/
+__pycache__/
+*.pyc
+.sites-runtime/
+*.tar.gz
+.DS_Store
+worker-config.json
+worker.json
+.openai/
+artifacts/
+playwright-report/
+test-results/
+
+node_modules/
