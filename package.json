@@ -1,0 +1,18 @@
+{
+  "name": "photo-coach",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "check": "node --check dist/app.js && node --check dist/cloud.js",
+    "test:db": "node tests/database.mjs",
+    "test:ui": "node tests/browser.mjs",
+    "test:worker": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "dev": "node scripts/serve.mjs",
+    "package:assistant": "python3 scripts/package_assistant.py"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.3.14",
+    "playwright": "^1.63.0"
+  }
+}

@@ -1,0 +1,2 @@
+39b3172aea0eec2f20f77b6b5bf2161ceb38209a93e136cafffbc98a42b14377  photo-coach-assistant.zip
+2e67b1b548c1359fb3fd09b71acf4f12aef2b31327e6f67144e8a4094106b427  schema.sql
